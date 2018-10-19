@@ -1,4 +1,5 @@
 # Parcial-
+
 package practica;
  import java.util.Scanner;
  public class contador { 
@@ -55,8 +56,6 @@ contador2.decrementar();
  System.out.println(contador2.GetContador());
  contador contador3 = new contador(contador2); System.out.println(contador3.GetContador());
  }}
-
-
 
 
 #Problema 2
@@ -199,6 +198,156 @@ public class ProyectoFecha {
 
 
 #Problema 3
+package practica; 
+ 
+public class libro { 
+    private String titulo; 
+    private String autor; 
+    private int ejemplares; 
+    private int prestados; 
+ 
+ 
+    public libro() { 
+    } 
+ 
+   
+    public libro(String titulo, String autor, int ejemplares, int prestados) { 
+        this.titulo = titulo; 
+        this.autor = autor; 
+        this.ejemplares = ejemplares; 
+        this.prestados = prestados; 
+    } 
+    public String getAutor() { 
+        return autor; 
+    } 
+ 
+    public void setAutor(String autor) { 
+        this.autor = autor; 
+    } 
+ 
+    public int getEjemplares() { 
+        return ejemplares; 
+    } 
+ 
+    public void setEjemplares(int ejemplares) { 
+        this.ejemplares = ejemplares; 
+    } 
+ 
+    public int getPrestados() { 
+        return prestados; 
+    } 
+ 
+    public void setPrestados(int prestados) { 
+        this.prestados = prestados; 
+    } 
+ 
+    public String getTitulo() { 
+        return titulo; 
+    } 
+ 
+    public void setTitulo(String titulo) { 
+        this.titulo = titulo; 
+    } 
+ 
+    public boolean prestamo() { 
+        boolean prestado = true; 
+        if (prestados < ejemplares) { 
+            prestados++; 
+        } else { 
+            prestado = false; 
+        } 
+        return prestado; 
+    } 
+ 
+ 
+    public boolean devolucion() { 
+        boolean devuelto = true; 
+        if (prestados == 0) { 
+            devuelto = false; 
+        } else { 
+            prestados--; 
+        } 
+        return devuelto; 
+    } 
+ 
+    @Override 
+    public String toString() { 
+        return "titulo: " + titulo + "\nautor: " + autor + 
+                  "\nejemplares: " + ejemplares + "\nprestados: " + prestados; 
+    } 
+    
+} 
+public static void main(String[] args) { 
+        Scanner sc = new Scanner(System.in); 
+        String titulo, autor; 
+        int ejemplares; 
+ 
+        libro libro1 = new libro("Viaje del Parnaso", "Cervantes", 1, 0); 
+         
+        libro libro2 = new libro(); 
+ 
+        System.out.print("Introduce titulo: "); 
+        titulo = sc.nextLine(); 
+        System.out.print("Introduce autor: "); 
+        autor = sc.nextLine(); 
+        System.out.print("Numero de ejemplares: "); 
+        ejemplares = sc.nextInt(); 
+ 
+         
+        libro2.setTitulo(titulo); 
+        libro2.setAutor(autor); 
+        libro2.setEjemplares(ejemplares); 
+ 
+        System.out.println("libro 1:"); 
+        System.out.println("Titulo: " + libro1.getTitulo()); 
+        System.out.println("Autor: " + libro1.getAutor()); 
+        System.out.println("Ejemplares: " + libro1.getEjemplares()); 
+        System.out.println("Prestados: " + libro1.getPrestados()); 
+        System.out.println(); 
+ 
+         
+        if (libro1.prestamo()) { 
+            System.out.println("Se prestó el libro " + libro1.getTitulo()); 
+        } else { 
+            System.out.println("No quedan ejemplares del libro " + libro1.getTitulo() + " para prestar"); 
+        } 
+ 
+         
+        if (libro1.devolucion()) { 
+            System.out.println("Se devolvió el libro " + libro1.getTitulo()); 
+        } else { 
+            System.out.println("No hay ejemplares del libro " + libro1.getTitulo() + " prestados"); 
+        } 
+ 
+         
+        if (libro1.prestamo()) { 
+            System.out.println("Seprestó el libro " + libro1.getTitulo()); 
+        } else { 
+            System.out.println("No quedan ejemplares del libro " + libro1.getTitulo() + " para prestar"); 
+        } 
+ 
+          if (libro1.prestamo()) { 
+            System.out.println("Se prestó el libro " + libro1.getTitulo()); 
+        } else { 
+            System.out.println("No quedan ejemplares del libro " + libro1.getTitulo() + " para prestar"); 
+        } 
+         
+        System.out.println("libro 1:"); 
+        System.out.println("Titulo: " + libro1.getTitulo()); 
+        System.out.println("Autor: " + libro1.getAutor()); 
+        System.out.println("Ejemplares: " + libro1.getEjemplares()); 
+        System.out.println("Prestados: " + libro1.getPrestados()); 
+        System.out.println(); 
+ 
+        
+        System.out.println("libro 2:"); 
+        System.out.println("Titulo: " + libro2.getTitulo()); 
+        System.out.println("Autor: " + libro2.getAutor()); 
+        System.out.println("Ejemplares: " + libro2.getEjemplares()); 
+        System.out.println("Prestados: " + libro2.getPrestados()); 
+        System.out.println(); 
+    } 
+
 
  
  
