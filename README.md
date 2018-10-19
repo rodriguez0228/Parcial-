@@ -1,64 +1,106 @@
 # Parcial-
 
-package practica;
- import java.util.Scanner;
- public class contador { 
-private int cont; 
-public contador() { 
-}
- public contador(int cont) {
- if (cont < 0) { 
-this.cont = 0; 
-} else {
- this.cont = cont; 
-}
- }
- public contador(final contador c) { 
-cont = c.cont;
- }
- public int GetContador() {
- return cont;
- }
- public void SetContador(int cont) {
- if (cont < 0) {
- this.cont = 0; 
-} else {
- this.cont = cont;
- }
- }
- public void incrementar() {
- cont++; 
-}
- public void decrementar() { 
-cont--;
- if (cont < 0) {
- cont = 0; 
-}
- }
- public static void main(String[] args) {
- Scanner sc = new Scanner(System.in);
- contador contador1 = new contador();
- int tcl; 
-System.out.println("Dame un valor para iniciar contador: "); 
-tcl = sc.nextInt(); 
-contador1.SetContador(tcl);
-contador1.incrementar();
- System.out.println(contador1.GetContador());
- contador1.incrementar();
- contador1.incrementar(); 
-System.out.println(contador1.GetContador());
- contador1.decrementar();
- System.out.println(contador1.GetContador());
- contador contador2 = new contador(10);
- contador2.incrementar();
- System.out.println(contador2.GetContador()); 
-contador2.decrementar();
- System.out.println(contador2.GetContador());
- contador contador3 = new contador(contador2); System.out.println(contador3.GetContador());
- }}
+#Problema 1
 
+
+import java.util.Scanner; 
+ 
+public class contador { 
+ 
+    private int cont; 
+ 
+     
+    public contador() { 
+    } 
+ 
+    
+    public contador(int cont) { 
+        if (cont < 0) { 
+            this.cont = 0; 
+        } else { 
+            this.cont = cont; 
+        } 
+    } 
+ 
+    public contador(final contador c) { 
+        cont = c.cont; 
+    } 
+ 
+    public int GetContador() { 
+        return cont; 
+    } 
+ 
+     
+    public void SetContador(int cont) { 
+        if (cont < 0) { 
+            this.cont = 0; 
+        } else { 
+            this.cont = cont; 
+        } 
+    } 
+ 
+     
+    public void incrementar() { 
+        cont++; 
+    } 
+ 
+     
+    public void decrementar() { 
+        cont--; 
+        if (cont < 0) { 
+            cont = 0; 
+        } 
+    } 
+ 
+public static void main(String[] args) { 
+     
+    Scanner sc = new Scanner(System.in); 
+    
+ 
+    contador contador1 = new contador(); 
+   
+    int tcl; 
+    System.out.println("Dame un valor para iniciar contador: "); 
+    tcl = sc.nextInt(); 
+ 
+    contador1.SetContador(tcl); 
+     
+    contador1.incrementar(); 
+     
+    System.out.println(contador1.GetContador()); 
+    
+    contador1.incrementar(); 
+    contador1.incrementar(); 
+    
+     
+    System.out.println(contador1.GetContador()); 
+    
+     
+    contador1.decrementar(); 
+    
+    
+    System.out.println(contador1.GetContador()); 
+ 
+     
+    contador contador2 = new contador(10); 
+    
+     
+    contador2.incrementar(); 
+    System.out.println(contador2.GetContador()); 
+    contador2.decrementar(); 
+    System.out.println(contador2.GetContador()); 
+ 
+     
+    contador contador3 = new contador(contador2); 
+ 
+    
+    System.out.println(contador3.GetContador()); 
+}} 
+
+ 
 
 #Problema 2
+
  
 public class fecha { 
  
@@ -198,6 +240,8 @@ public class ProyectoFecha {
 
 
 #Problema 3
+
+
 package practica; 
  
 public class libro { 
